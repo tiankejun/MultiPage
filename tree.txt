@@ -1,0 +1,45 @@
+E:/MultiPage
+|   .editorconfig   // VScode 编辑器配置
+|   .eslintrc.js    // ESlint 配置
+|   babel.config.js // babel 配置
+|   cypress.json    //
+|   output.js       // 执行 vue inspect 后输出的配置  （无用）
+|   package-lock.json   // package 版本锁定文件
+|   package.json    // pageke 文件
+|   postcss.config.js   // postcss 配置
+|   README.md       // readme
+|   tree.txt        // 执行 tree /f /A >tree.txt 项目目录结构文件 （无用）
+|   vue.config.js   // vue 配置文件 重点
++---node_modules    // 依赖包
++---public          // 存放多页面文件对应 html 文件
+|       favicon.ico
+|       index.html
+|       login.html
++---src             // 项目源码
+|   +---assets      // 静态资源文件
+|   +---components  // 公共组件
+|   |   +---business    // 业务公共组件
+|   |   \---common      // 剥离业务后的公共组件
+|   +---pages       // 多页面文件对应的入口文件，以及路由
+|   |   +---index
+|   |   |       App.vue
+|   |   |       main.js     // 返回 首页的vue 实例
+|   |   |       router.js   // 返回 首页的 路由实例
+|   |   \---login
+|   |           App.vue
+|   |           main.js     // 返回 登录页的vue 实例
+|   |           router.js   // 返回登 录页面的 路由实例
+|   +---router      // 其他路由
+|   +---store       // vuex
+|   |   |   index.js    // 返回所有vuex
+|   |   \---common      // 存储公共vuex
+|   |           index.js
+|   +---tools       // 工具
+|   \---views       // 业务模块
+|       |   About.vue       // 一个测试页面
+|       |   Error404.vue    // 404 页面
+|       +---index   // 首页 页面布局
+|       |       Index.vue
+|       \---login   // 登录页 页面布局
+|               Login.vue
+\---tests   // 测试
