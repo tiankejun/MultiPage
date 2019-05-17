@@ -6,16 +6,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
-const Login = resolve => require(['@/views/login/index.vue'], resolve)
+const Detail = resolve => require(['@/views/detail/index.vue'], resolve)
 const error404 = resolve => require(['@/views/Error404'], resolve)
 const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
         {
-            path: '/login.html',
-            name: 'Login',
-            component: Login
+            path: '/detail.html',
+            name: 'Detail',
+            component: Detail
         },
         {
             path: '*',

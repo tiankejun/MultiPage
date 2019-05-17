@@ -10,6 +10,7 @@
             <div class="login_form">
                 <!-- <a class="login_btn" href="index.html" target="_blank" @click="login">登录</a> -->
                 <a class="login_btn" href="#" @click="login">登录</a>
+                <a class="login_btn" href="#" @click="detail">详情</a>
             </div>
         </div>
     </div>
@@ -36,7 +37,13 @@ export default {
         ]),
         login () {
             this.update_name('123456')
-            window.open('index.html', '_blank')
+            let param = '?id=' + '123456'
+            window.open('index.html' + param, '_blank')
+        },
+        detail () {
+            this.update_name('abcdefg')
+            let param = '?id=' + 'abcdefg'
+            window.open('detail.html' + param, '_blank')
         }
     }
 }

@@ -1,5 +1,5 @@
 const state = {
-    name: 'test'
+    name: ''
 }
 const mutations = {
     UPDATE_NAME (state, value) {
@@ -8,6 +8,7 @@ const mutations = {
 }
 const actions = {
     update_name ({ commit, dispatch }, value) {
+        console.log(value)
         commit('UPDATE_NAME', value)
     }
 }
