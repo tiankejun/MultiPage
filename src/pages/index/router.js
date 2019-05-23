@@ -5,11 +5,11 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
+import commonRouter from '@/router/common/index.js'
 Vue.use(Router)
 
 const Index = resolve => require(['@/views/index/Index.vue'], resolve)
 const About = resolve => require(['@/views/About.vue'], resolve)
-const error404 = resolve => require(['@/views/Error404'], resolve)
 
 const router = new Router({
     mode: 'history',
@@ -19,8 +19,7 @@ const router = new Router({
             path: '/',
             name: 'Root',
             component: Index
-        },
-        {
+        }, {
             path: '/index.html',
             name: 'Index',
             component: Index
@@ -28,11 +27,8 @@ const router = new Router({
             path: '/About',
             name: 'About',
             component: About
-        }, {
-            path: '*',
-            name: '404',
-            component: error404
-        }
+        },
+        ...commonRouter
     ]
 })
 

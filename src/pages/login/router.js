@@ -5,9 +5,9 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
+import commonRouter from '@/router/common/index.js'
 Vue.use(Router)
 const Login = resolve => require(['@/views/login/index.vue'], resolve)
-const error404 = resolve => require(['@/views/Error404'], resolve)
 const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -17,11 +17,7 @@ const router = new Router({
             name: 'Login',
             component: Login
         },
-        {
-            path: '*',
-            name: '404',
-            component: error404
-        }
+        ...commonRouter
     ]
 })
 
@@ -31,13 +27,7 @@ router.beforeEach((to, from, next) => {
     if (whiteList.indexOf(to.path) >= 0) {
         next()
     } else if (!tokenID) {
-        if ((from.path === '/login' || from.path === '/') && to.path === '/setting') {
-            next()
-        } else if (to.path === '/BlueData') {
-            next()
-        } else {
-            next({ path: '/login' })
-        }
+        next({ path: '/login' })
     } else {
         next()
     }

@@ -19,6 +19,9 @@
 <script>
 // @ is an alias to /src
 import { mapState, mapActions } from 'vuex'
+// import common from '@/api/common/'
+// let { aa } = common
+// aa({ 'name': 123 })
 export default {
     name: 'Login',
     data () {
