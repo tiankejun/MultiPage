@@ -8,6 +8,7 @@ import Router from 'vue-router'
 import commonRouter from '@/router/common/index.js'
 Vue.use(Router)
 const Login = resolve => require(['@/views/login/index.vue'], resolve)
+const Index = resolve => require(['@/views/index/Index.vue'], resolve)
 const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -16,6 +17,10 @@ const router = new Router({
             path: '/login.html',
             name: 'Login',
             component: Login
+        }, {
+            path: '/index.html',
+            name: 'Index',
+            component: Index
         },
         ...commonRouter
     ]

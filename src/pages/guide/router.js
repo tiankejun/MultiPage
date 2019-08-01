@@ -8,26 +8,28 @@ import Router from 'vue-router'
 import commonRouter from '@/router/common/index.js'
 Vue.use(Router)
 
-const Index = resolve => require(['@/views/index/Index.vue'], resolve)
-const About = resolve => require(['@/views/About.vue'], resolve)
+const Guide = resolve => require(['@/views/guide/Index.vue'], resolve)
+const Test1 = resolve => require(['@/views/guide/Test1.vue'], resolve)
+const Test2 = resolve => require(['@/views/guide/Test2.vue'], resolve)
 
 const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
         {
-            path: '/',
-            name: 'Root',
-            component: Index
-        },
-        {
-            path: '/index.html',
-            name: 'Index',
-            component: Index
-        }, {
-            path: '/About',
-            name: 'About',
-            component: About
+            path: '/guide.html',
+            name: 'Guide',
+            redirect: '/guide/test1',
+            component: Guide,
+            children: [{
+                path: '/guide/test1',
+                name: 'Test1',
+                component: Test1
+            }, {
+                path: '/guide/test2',
+                name: 'Test2',
+                component: Test2
+            }]
         },
         ...commonRouter
     ]

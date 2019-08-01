@@ -9,7 +9,7 @@
             </div>
             <div class="login_form">
                 <!-- <a class="login_btn" href="index.html" target="_blank" @click="login">登录</a> -->
-                <a class="login_btn" href="#" @click="login">登录</a>
+                <a class="login_btn" href="index.html">登录</a>
                 <a class="login_btn" href="#" @click="detail">详情</a>
             </div>
         </div>

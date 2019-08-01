@@ -9,6 +9,7 @@
         </div>
         <div class="header_main_nav">
             <router-link to="/About">About</router-link> |
+            <router-link to="guide.html" target="_blank">Guide</router-link> |
             <router-link to="login.html" target="_blank">Login</router-link>
         </div>
     </div>

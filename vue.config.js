@@ -43,5 +43,12 @@ module.exports = {
             title: 'Detail Page',
             chunks: ['chunk-vendors', 'chunk-common', 'detail']
         },
+        guide: {
+            entry: './src/pages/guide/main.js',
+            template: './public/guide.html',
+            filename: 'guide.html',
+            title: 'Guide Page',
+            chunks: ['chunk-vendors', 'chunk-common', 'guide']
+        },
     }
 }

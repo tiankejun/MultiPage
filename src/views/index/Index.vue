@@ -1,7 +1,6 @@
 <template>
     <div class="index">
         <Header></Header>
-        <!-- <banner></banner> -->
         <div class="content">
             {{skuId}}
         </div>
